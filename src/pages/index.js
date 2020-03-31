@@ -1,12 +1,15 @@
 import React from "react"
 
 import Header from "../components/header/header-component"
+import Hero from "../components/hero/hero-component"
 
 import "../styles/index-styles.scss"
 
 const IndexPage = () => (
   <>
-    <Header />
+    <Hero>
+      <Header />
+    </Hero>
   </>
 )
 

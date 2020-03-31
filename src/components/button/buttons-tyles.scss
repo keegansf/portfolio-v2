@@ -1,0 +1,51 @@
+@import "../../styles/variable.scss";
+
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: $main-font;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-align: center;
+  background: $primary-color;
+  color: white;
+  border: solid 3px $primary-color;
+  border-radius: 4px;
+  padding: 0.5em 2em;
+
+  &:hover {
+    transition: 0.3s ease;
+    background: rgb(3, 161, 122);
+    border: solid 3px rgb(3, 161, 122);
+    transform: translateY(-3px);
+  }
+}
+
+.secondary {
+  background: none;
+  color: $primary-color;
+
+  &:hover {
+    transition: 0.3s ease;
+    color: white;
+    .button-image {
+      filter: invert(84%) sepia(64%) saturate(17%) hue-rotate(276deg)
+        brightness(106%) contrast(104%);
+    }
+  }
+}
+
+.button-image {
+  filter: invert(61%) sepia(73%) saturate(3645%) hue-rotate(128deg)
+    brightness(113%) contrast(97%);
+  background: none;
+  padding: 0 0 0 0;
+  margin: 0 0.7em 0 0;
+}
+
+.isVisible {
+  display: none;
+}
