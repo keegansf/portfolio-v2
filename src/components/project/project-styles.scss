@@ -1,0 +1,17 @@
+@import "../../styles/variable.scss";
+
+.project-label-link {
+  margin: 0 10% 0 0;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.08em;
+}
+
+.project-label-link:active {
+  color: $primary-color;
+}

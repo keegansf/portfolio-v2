@@ -1,0 +1,15 @@
+.skill-list {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-group-title {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}

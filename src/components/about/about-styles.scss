@@ -1,0 +1,72 @@
+@import "../../styles/variable.scss";
+
+.about {
+  background: #102139;
+  width: 100vw;
+  margin-left: -13.8vw;
+  margin-top: 4em;
+  padding: 0 19.8vw 0 13.8vw;
+}
+
+.about-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-text {
+  width: 34vw;
+  font-family: $main-font;
+}
+
+.section-heading {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 0.08em;
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
+  margin-top: 5em;
+}
+
+.section-subheading {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.08em;
+  margin: 0.3em 0 0.5em 0;
+  padding: 0;
+}
+
+.about-body {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  width: 30vw;
+  letter-spacing: 0.01em;
+}
+
+.about-image {
+  margin-top: 5em;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  margin-top: 5em;
+}
+
+.skills-title {
+  margin-top: 3em;
+}
+
+.skill-list-component {
+  display: flex;
+  justify-content: space-between;
+  font-family: $main-font;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+}
