@@ -1,17 +1,117 @@
 @import "../../styles/variable.scss";
 
+.project-wrapper {
+  display: flex;
+  flex-flow: column;
+  margin: 0vh 0;
+}
+
+.project-labels {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
 .project-label-link {
-  margin: 0 10% 0 0;
+  margin: 0 3vw 0 0;
   cursor: pointer;
-  color: white;
+  background-color: transparent;
   text-transform: uppercase;
   font-family: $main-font;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.08em;
+  border: none;
+}
+
+.project-label-link:focus {
+  margin: 0 3vw 0 0;
+  cursor: pointer;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.08em;
+  border: none;
+  color: #04dea9;
+  outline: 0;
 }
 
 .project-label-link:active {
-  color: $primary-color;
+  margin: 0 3vw 0 0;
+  cursor: pointer;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.08em;
+  border: none;
+  color: #04dea9;
+  outline: 0;
+}
+
+.project-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 80vw;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+}
+
+.project {
+  margin-bottom: 2em;
+  margin-right: 2em;
+}
+
+.project-comp-title {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  padding: 1em 2em 0em 2em;
+}
+
+.project-comp-body {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  margin: 0 2em;
+  padding: 0;
+}
+
+.wrapper {
+  width: 22vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 13em;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.front-image {
+  width: 20.7vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 13em;
+  z-index: 1;
+  position: relative;
+  margin-top: -22.5vh;
+}
+
+.wrapper:hover {
+  color: orange;
+
+  & .front-image {
+    transition: 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+  }
 }

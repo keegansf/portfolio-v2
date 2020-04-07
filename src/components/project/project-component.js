@@ -1,37 +1,91 @@
 import React, { useState, useEffect } from "react"
-import portfolio from "../../data/project-data"
+import yumiBg from "../../images/yumi-bg.png"
 
 import "./project-styles.scss"
 
-const Project = () => {
-  const portfolio = [
-    {
-      name: "My best client",
-      category: ["all", "frontend", "ux-ui"],
-    },
-    {
-      name: "My favorite case",
-      category: ["all", "mobile", "ux-ui"],
-    },
-    {
-      name: "A old job",
-      category: ["all", "frontend"],
-    },
-    {
-      name: "It is a really cool website",
-      category: ["all", "frontend", "ux-ui"],
-    },
-    {
-      name: "Something more",
-      category: ["all", "others"],
-    },
-  ]
+const portfolio = [
+  {
+    id: 1,
+    title: "YUMI: Album Cover",
+    description:
+      "Album Art created with Photoshop and Ilustrator. The goal was to design an album cover using photo composition and manipulation.",
+    sourceLink: "",
+    liveLink: "",
+    skills: ["photoshop", "illustrator"],
+    bgImage: require("../../images/yumi-bg.png"),
+    imgSource: require("../../images/yumi-front.png"),
+    category: ["all", "motion design"],
+  },
+  {
+    id: 2,
+    title: "SHER: E-Commerce Website",
+    description:
+      "Album Art created with Photoshop and Ilustrator. The goal was to design an album cover using photo composition and manipulation.",
+    sourceLink: "",
+    liveLink: "",
+    skills: ["photoshop", "illustrator"],
+    bgImage: require("../../images/yumi-bg.png"),
+    imgSource: require("../../images/yumi-front.png"),
+    category: ["all", "web design"],
+  },
+  {
+    id: 3,
+    title: "Ysabel Agaton: Portfolio",
+    description:
+      "Album Art created with Photoshop and Ilustrator. The goal was to design an album cover using photo composition and manipulation.",
+    sourceLink: "",
+    liveLink: "",
+    skills: ["photoshop", "illustrator"],
+    bgImage: require("../../images/ysabel-bg.png"),
+    imgSource: require("../../images/ysabel-front.png"),
+    category: ["all", "motion design"],
+  },
+  {
+    id: 4,
+    title: "Liveloud: Motion Design",
+    description:
+      "Album Art created with Photoshop and Ilustrator. The goal was to design an album cover using photo composition and manipulation.",
+    sourceLink: "",
+    liveLink: "",
+    skills: ["photoshop", "illustrator"],
+    bgImage: require("../../images/yumi-bg.png"),
+    imgSource: require("../../images/yumi-front.png"),
+    category: ["all", "illustration"],
+  },
+  {
+    id: 5,
+    title: "LOVE_EARTH: Logo Design",
+    description:
+      "Album Art created with Photoshop and Ilustrator. The goal was to design an album cover using photo composition and manipulation.",
+    sourceLink: "",
+    liveLink: "",
+    skills: ["photoshop", "illustrator"],
+    bgImage: require("../../images/yumi-bg.png"),
+    imgSource: require("../../images/yumi-front.png"),
+    category: ["all", "motion design"],
+  },
+  {
+    id: 6,
+    title: "Project: Poster",
+    description:
+      "Album Art created with Photoshop and Ilustrator. The goal was to design an album cover using photo composition and manipulation.",
+    sourceLink: "",
+    liveLink: "",
+    skills: ["photoshop", "illustrator"],
+    bgImage: require("../../images/yumi-bg.png"),
+    imgSource: require("../../images/yumi-front.png"),
+    category: ["all", "illustration", "motion design"],
+  },
+]
 
+function App() {
   const [filter, setFilter] = useState("all")
   const [projects, setProjects] = useState([])
+
   useEffect(() => {
     setProjects(portfolio)
   }, [])
+
   useEffect(() => {
     setProjects([])
     const filtered = portfolio.map(p => ({
@@ -42,51 +96,69 @@ const Project = () => {
   }, [filter])
 
   return (
-    <div>
+    <div className="project-wrapper">
+      <h2 className="section-heading project-title">Projects</h2>
+      <h3 className="section-subheading project-subtitle">Reccent Work</h3>
       <div className="project-labels">
-        <a
+        <button
           className="project-label-link"
           active={filter === "all"}
           onClick={() => setFilter("all")}
         >
           All
-        </a>
-        <a
+        </button>
+        <button
           className="project-label-link"
-          active={filter === "frontend"}
-          onClick={() => setFilter("frontend")}
+          active={filter === "web design"}
+          onClick={() => setFilter("web design")}
         >
-          Frontend
-        </a>
-        <a
+          Web Design
+        </button>
+        <button
           className="project-label-link"
           active={filter === "mobile"}
-          onClick={() => setFilter("mobile")}
+          onClick={() => setFilter("motion design")}
         >
-          Mobile
-        </a>
-        <a
+          Motion Design
+        </button>
+        <button
           className="project-label-link"
           active={filter === "ux-ui"}
-          onClick={() => setFilter("ux-ui")}
+          onClick={() => setFilter("illustration")}
         >
-          UX/UI
-        </a>
-        <a
-          className="project-label-link"
-          active={filter === "others"}
-          onClick={() => setFilter("others")}
-        >
-          Others
-        </a>
+          Illustration
+        </button>
       </div>
-      <div className="portfolio__container">
+      <div className="project-container">
         {projects.map(item =>
-          item.filtered === true ? <span key={item.name}>{item.name}</span> : ""
+          item.filtered === true ? (
+            <div className="project" key={item.id}>
+              <div
+                class="wrapper"
+                style={{ backgroundImage: `url(${item.bgImage})` }}
+              >
+                <div className="project-comp-header">
+                  <h1 className="project-comp-title">{item.title}</h1>
+                  <div className="project-comp-icon-wrapper">
+                    <a className="project-comp-link">
+                      <img className="project-comp-icon" src="" />
+                    </a>
+                    <a className="project-comp-link">
+                      <img className="project-comp-icon" src="" />
+                    </a>
+                  </div>
+                </div>
+                <p className="project-comp-body">{item.description}</p>
+                <img class="front-image" src={item.imgSource} />
+              </div>
+            </div>
+          ) : (
+            ""
+          )
         )}
       </div>
     </div>
   )
 }
 
-export default Project
+export default App
